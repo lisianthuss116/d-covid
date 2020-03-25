@@ -12,34 +12,52 @@
 </head>
 
 <body>
-    <div class="container mt-5 mb-5">
-        <div class="row d-flex justify-content-between">
-            <div class="col-12 mb-3">
-                <h4>Coronavirus has infected {{total_data}} countries</h4>
+    <div class="container mt-7 mb-5">
+        <section id="head-content">
+            <div class="mt-5 mb-5 text-center d-flex flex-column">
+                <h2 class="text-weight-600">
+                    <a href="/" class="a-no-decoration">D COVID-19 Monitor</a>
+                </h2>
+                <p class="font-size-12">last update {{last_update}} ago</p>
+                <div class="container mt-5">
+                    <p class="font-size-11">Coronaviruses are a family of viruses that range from the common cold to more severe viruses such as severe acute respiratory syndrome (SARS-CoV) and Middle East respiratory syndrome (MERS-CoV). COVID-19 stands for coronavirus disease 2019, and it is considered a “novel” (or new) coronavirus not previously seen in humans. The virus causing COVID-19 is called SARS-CoV-2.</p>
+                </div>
             </div>
-            <div class="col-12 mb-5">
-                {{data_all}}
-            </div>
-            {% for i in datas_country %}
-                {% include 'lib/data_by_country.html' %}
-            {% endfor %}
-        </div>
-        {% include 'lib/pagination.html' %}
-    </div>
-    <div class="container mt-5">
-        &copy; 2020 - D-covid | Content by <a href="https://github.com/novelcovid/api">NovelCOVID</a>
-        <p>My github: <a href="https://github.com/lisianthuss116/">achmad.uwu</a></p>
-    </div>
+        </section>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
+        <section id="main-content">
+            <div class="row mb-3">
+                <h5 calss="border-bottom-1">
+                    <a href="http://127.0.0.1:8000/as-card/">
+                    view as card</a>
+                </h5>
+            </div>
+            <div class="row mb-5 d-flex justify-content-between">
+                {% for i in datas %}
+                {% for j in i %}
+                <div class="card border-radius-015 mb-5 mr-3" style="width: 22rem; height: 8.9rem;">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <h5 class="cursor-context-menu text-weight-600 text-muted">TOTAL {{j}}</h4>
+                            </div>
+                            <div class="col-12 mt-2">
+                                <h1 class="cursor-context-menu text-weight-600">
+                                    {{i.CASES}}</h1>
+                                <h1 class="cursor-context-menu text-weight-600">
+                                    {{i.DEATHS}}</h1>
+                                <h1 class="cursor-context-menu text-weight-600">
+                                    {{i.RECOVERED}}</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                {% endfor %}
+            </div>
+        </section>
+
+        {% include 'components/footer.html' %}
+    </div>
 </body>
-
 </html>

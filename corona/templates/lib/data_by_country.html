@@ -1,0 +1,59 @@
+<div class="card border-radius-015 mb-5 scale-05-03s" style="width: 35rem;">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-12">
+                <span class="cursor-context-menu text-weight-600 h3">
+                    {{i.country}}
+                </span>
+                <span class="float-right cursor-context-menu h5">
+                    {{i.cases}} cases
+                </span>
+            </div>
+        </div>
+        <hr>
+        <div class="row text-weight-600">
+            <div class="col-4">
+                <h5 class="card-subtitle mb-2 cursor-context-menu font-size-14">
+                    Recovered
+                </h5>
+                <span class='text-green'>{{i.recovered}}</span>
+            </div>
+            <div class="col-4">
+                <h5 class="card-subtitle mb-2 cursor-context-menu font-size-14">
+                    active
+                </h5>
+                <span class='text-green'>{{i.active}}</span>
+            </div>
+            <div class="col-4">
+                <h5 class="card-subtitle mb-2 cursor-context-menu font-size-14">
+                    deaths
+                </h5>
+                <p>{{i.deaths}}</p>
+            </div>
+        </div>
+        <div class="row text-weight-600 mt-3">
+            <div class="col-4">
+                <h5 class="card-subtitle mb-2 cursor-context-menu font-size-14">
+                    critical
+                </h5>
+                <span class="text-red">{{i.critical}}</span>
+            </div>
+            <div class="col-4">
+                <h5 class="card-subtitle mb-2 cursor-context-menu font-size-14">
+                    new cases
+                </h5>
+                {% if i.todayCases != 0 %}
+                    <span class="text-red">+ {{i.todayCases}}</span>
+                    {% else %}
+                    <span class="text-muted">0</span>
+                {% endif %}
+            </div>
+            <div class="col-4">
+                <h5 class="card-subtitle mb-2 cursor-context-menu font-size-14">
+                    new deaths
+                </h5>
+                <span class="text-muted">{{i.todayDeaths}}</span>
+            </div>
+        </div>
+    </div>
+</div>

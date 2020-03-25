@@ -16,7 +16,8 @@ def main(request):
 
 
 def as_card(request):
-    context = card_api(request=request)
+    limit = request.GET.get('limit')
+    context = card_api(request=request, limit=limit)
     return render(request, 'as_card.html', context)
 
 

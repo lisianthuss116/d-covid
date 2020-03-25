@@ -28,11 +28,14 @@ def main_api(request):
     return context
 
 
-def card_api(request):
+def card_api(request, limit=None):
     total_data = countries(request=request)
 
     # paginate
-    paginate_by = 20
+    if limit is not None:
+        paginate_by = limit
+    else:
+        paginate_by = 20
     paginator = Paginator(data_by_country.json(), paginate_by)
     page = request.GET.get('page')
     datas = paginator.get_page(page)

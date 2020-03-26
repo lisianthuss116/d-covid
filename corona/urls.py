@@ -5,5 +5,5 @@ urlpatterns = [
     # main page
     path('', main, name='main'),
     # datas-card page
-    path('as-card/', as_card, name='as-card'),
+    path('as-card/', as_card, name='as_card'),
 ]

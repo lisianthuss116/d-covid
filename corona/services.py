@@ -72,10 +72,10 @@ def last_update():
     if minute == 0:
         return f"{sec} seconds"
     elif hour == 0:
-        return f"{minute} minute {sec} seconds"
+        return f"{minute} minute"
     elif day == 0:
-        return f"{hour} hour {minute} minute {sec} seconds"
+        return f"{hour} hour"
     elif week == 0:
-        return f"{day} day {hour} hour {minute} minute {sec} seconds"
+        return f"{day} day"
     else:
-        return f"{week} week {day} day {hour} hour {minute} minute {sec} seconds"
+        return f"{week} week"

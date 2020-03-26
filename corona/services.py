@@ -9,7 +9,7 @@ import requests
 
 
 # api endpoint
-data_by_country = requests.get('https://corona.lmao.ninja/countries')
+data_by_country = requests.get('https://corona.lmao.ninja/countries/')
 data_all = requests.get('https://corona.lmao.ninja/all')
 
 

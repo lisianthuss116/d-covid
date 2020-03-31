@@ -17,7 +17,7 @@ def main_api(request):
         if str.lower(i) == 'updated':
             pass
         else:
-            datas_all.append({str.upper(i): j})
+            datas_all.append({i: j})
 
     # context
     context = {

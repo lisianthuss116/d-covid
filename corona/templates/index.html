@@ -16,9 +16,11 @@
         <section id="head-content">
             <div class="mt-5 mb-5 text-center d-flex flex-column">
                 <h2 class="text-weight-600">
-                    <a href="{% url 'main' %}" class="a-no-decoration">D COVID-19 Monitor</a>
+                    <a href="{% url 'main' %}" class="a-no-decoration">
+                        D COVID-19 Monitor
+                    </a>
                 </h2>
-                <p class="font-size-12">last update {{last_update}} ago</p>
+                <p class="small">last update {{last_update}}</p>
                 <div class="container mt-5">
                     <p class="font-size-11">Coronaviruses are a family of viruses that range from the common cold to more severe viruses such as severe acute respiratory syndrome (SARS-CoV) and Middle East respiratory syndrome (MERS-CoV). COVID-19 stands for coronavirus disease 2019, and it is considered a “novel” (or new) coronavirus not previously seen in humans. The virus causing COVID-19 is called SARS-CoV-2.</p>
                 </div>
@@ -42,13 +44,13 @@
                             </div>
                             <div class="col-12 mt-2">
                                 <h1 class="cursor-context-menu text-weight-600">
-                                    {{i.cases}}</h1>
+                                    {{i.CASES}}</h1>
                                 <h1 class="cursor-context-menu text-weight-600">
-                                    {{i.deaths}}</h1>
+                                    {{i.DEATHS}}</h1>
                                 <h1 class="cursor-context-menu text-weight-600">
-                                    {{i.recovered}}</h1>
+                                    {{i.RECOVERED}}</h1>
                                 <h1 class="cursor-context-menu text-weight-600">
-                                    {{i.active}}</h1>
+                                    {{i.ACTIVE}}</h1>
                             </div>
                         </div>
                     </div>

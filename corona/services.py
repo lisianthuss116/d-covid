@@ -14,12 +14,15 @@ def main_api(request):
     datas_all = []
     total_data = countries(request=request)
     for i, j in data_all.json().items():
-        datas_all.append({str.upper(i): j})
+        if str.lower(i) == 'updated':
+            pass
+        else:
+            datas_all.append({str.upper(i): j})
 
     # context
     context = {
         "total_data": len(total_data),
-        "datas": datas_all[:3],
+        "datas": datas_all,
         "last_update": last_update()
     }
     return context

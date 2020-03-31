@@ -143,4 +143,5 @@ static
 
 
 # custom
+staticfiles/admin
 staticfiles/admin/

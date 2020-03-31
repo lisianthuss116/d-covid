@@ -58,9 +58,9 @@ def countries(request):
 def last_update():
     datas_all = []
     for i, j in data_all.json().items():
-        datas_all.append({str.upper(i): j})
+        datas_all.append({i: j})
 
-    update_time = int(datas_all[-1]['UPDATED'])
+    update_time = int(datas_all[-2]['updated'])
     now = int(round(time.time() * 1000))
     last_update = now - update_time
 
